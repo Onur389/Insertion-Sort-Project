@@ -77,14 +77,14 @@ class Window(QtWidgets.QWidget):
 
 
         fullstring = "Big-O Notation : (n**2)"
+        count = 1
         for b in range(0,len(self.ds)):
             for j in range(b+1,len(self.ds)):
                 if self.ds[b] > self.ds[j] :
                     self.ds[b],self.ds[j] = self.ds[j],self.ds[b]
-    
-                
+                    fullstring = fullstring + "\nStep {}".format(count) + "\n{}".format(self.ds)
+                    count +=1
             
-            fullstring = fullstring + "\nStep {}".format(b+1) + "\n{}".format(self.ds)
             self.olabel.setText("{}".format(fullstring))
         
 
